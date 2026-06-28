@@ -23,6 +23,8 @@ Outputs go to `analysis_output/`:
 | `fig4_location_distance.png` | Fatalities by location type; distance-from-border distribution |
 | `fig5_time_by_wave.png` | Hours-from-attack-to-death, by wave |
 | `fig6_km_by_wave.png` | Kaplan-Meier "time-to-falling" curves by wave |
+| `fig7_top_locations.png` | Top-20 locations by fatalities (color = dominant branch, % joined) |
+| `fig8_distance_vs_count.png` | Location fatalities vs distance from border |
 
 ### Inferential
 - **B1 — χ² / Fisher** for each binary predictor (SOF, Officer, Combat, CT) vs `Joined`,
@@ -37,6 +39,18 @@ Outputs go to `analysis_output/`:
   set), plus **Kaplan-Meier** and a **Cox proportional-hazards** model.
 - **B4 — SOF over-representation bounding argument** with a sensitivity table over a
   generous range of assumed SOF force shares (since the true SOF headcount is classified).
+
+### Location-level analysis (`analysis_location.py` → `results_location.md`)
+- **Location summary table** (top-20 by fatalities): size, dominant branch, type,
+  distance, % joined, #SOF, first hour, time span, mean age. Clearly shows the two
+  waves by site — e.g. Nahal Oz Post (52 fallen, 0% joined, age ~20, first wave)
+  vs Be'eri (32 fallen, 84% joined, age ~32) and Sha'ar HaNegev Junction (100%
+  joined, all SOF).
+- **Spearman correlation** of a location's distance-from-border with its fatality count.
+- **Cluster-robust logistic regression** (Joined), with SEs clustered by location,
+  to verify the findings are robust to within-location non-independence. SOF, Reserves
+  and Age remain significant under clustering.
+Run: `python3 analysis_location.py`
 
 ## Key results (see `results.md` for full tables)
 - **Two waves confirmed**: joined mean age 34.9 vs on-duty 22.8; Mann-Whitney p≈3e-7.
