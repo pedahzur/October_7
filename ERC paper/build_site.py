@@ -18,6 +18,7 @@ PAGE = {
    stats=[("369","נופלים במאגר"),("~42%","מצטרפים (גל שני)"),("16.3%",'לוחמי יחב"מ מההרוגים'),("34.9 / 22.8","גיל ממוצע: מצטרפים / מוצבים")],
    h_video="אנימציה — התפשטות הלחימה",
    video_cap="האנימציה מציגה את הופעת הנופלים, שעה אחר שעה, על מפת עוטף עזה. לאינטראקציה מלאה ראו המפה החיה למטה.",
+   dl="⬇ הורדת הווידאו (webm)",
    h_map="מפת ציר‑הזמן — שעה אחר שעה",
    map_intro="כל עיגול מציין מיקום נפילה; גודלו פרופורציוני למספר הנופלים בו. הזיזו את המחוון או לחצו “הפעל” כדי לראות כיצד התפשטה הלחימה במרחב, שעה אחר שעה מתחילת המתקפה (06:29).",
    map_open="פתח במסך מלא ↗", map_bar="מפת זמן אינטראקטיבית",
@@ -48,6 +49,7 @@ PAGE = {
    stats=[("369","fallen in dataset"),("~42%","joiners (second wave)"),("16.3%","SOF among the fallen"),("34.9 / 22.8","mean age: joiners / on-duty")],
    h_video="Animation — the spread of the fighting",
    video_cap="The animation shows the fallen appearing, hour by hour, across the Gaza-envelope map. For full interactivity see the live map below.",
+   dl="⬇ Download the video (webm)",
    h_map="The timeline map — hour by hour",
    map_intro="Each circle marks a place where personnel fell; its size is proportional to the number of fallen there. Move the slider or press “Play” to see how the fighting spread in space, hour by hour from the start of the attack (06:29).",
    map_open="Open full screen ↗", map_bar="Interactive timeline map",
@@ -133,7 +135,8 @@ def render(s):
   <h2>{s['h_video']}</h2>
   <div class="card"><video class="anim" controls autoplay muted loop playsinline poster="figures/fig1_age_by_wave.png">
     <source src="{s['video_src']}" type="video/webm"/></video></div>
-  <p class="cap" style="font-size:13px;color:#5a6b7b">{s['video_cap']}</p>
+  <p class="cap" style="font-size:13px;color:#5a6b7b">{s['video_cap']}
+    &nbsp;·&nbsp; <a href="{s['video_src']}" download style="color:#1f4e79;font-weight:600">{s['dl']}</a></p>
 </div></section>
 
 <section><div class="wrap">
