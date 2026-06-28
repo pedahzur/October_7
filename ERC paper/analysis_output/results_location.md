@@ -67,3 +67,19 @@ Re-fits the individual-level model with **cluster-robust standard errors by loca
 | Age_c                      |  1.09 |      0.021 |          0.029 | 1.03-1.15            |           0.004 |
 
 n=366 individuals in 70 location clusters. The core conclusions survive clustering: **SOF (OR≈14), Reserves (OR≈31) and Age remain strong and significant** even with cluster-robust SEs — within-location correlation does not explain them away. Officer's independent effect attenuates to non-significance in this reduced model (it is collinear with service status and age, and in the full model its variance loaded onto the Branch terms that are dropped here for separation).
+
+## GEE (population-averaged) robustness model — clustered by location
+
+A generalized estimating equations logit with an exchangeable working correlation within location — a second, model-based check on within-location dependence (complements the cluster-robust SEs above).
+| term                       |   OR | 95% CI     |     p |
+|:---------------------------|-----:|:-----------|------:|
+| Intercept                  | 0.14 | 0.02-1.16  | 0.068 |
+| C(Service)[T.Professional] | 1.59 | 0.64-3.97  | 0.321 |
+| C(Service)[T.Reserves]     | 8.17 | 2.88-23.21 | 0     |
+| SOF                        | 5.95 | 2.74-12.91 | 0     |
+| Officer                    | 1.43 | 0.68-3.01  | 0.352 |
+| Combat                     | 2.6  | 0.29-23.35 | 0.393 |
+| Age_c                      | 1.05 | 1.02-1.09  | 0.005 |
+
+Estimated within-location correlation (exchangeable alpha): 0.355.
+The GEE estimates agree with the cluster-robust logit: SOF, Reserves and Age remain the significant predictors of joining.

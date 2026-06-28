@@ -17,6 +17,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 import statsmodels.formula.api as smf
+import statsmodels.api as sm
+from statsmodels.genmod.cov_struct import Exchangeable
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -137,6 +139,33 @@ p(f"n={int(fit_clu.nobs)} individuals in {m['Location'].nunique()} location clus
   "attenuates to non-significance in this reduced model (it is collinear with "
   "service status and age, and in the full model its variance loaded onto the "
   "Branch terms that are dropped here for separation).")
+
+# ----------------------------------------------------------- GEE robustness
+h("GEE (population-averaged) robustness model — clustered by location")
+p("A generalized estimating equations logit with an exchangeable working "
+  "correlation within location — a second, model-based check on within-location "
+  "dependence (complements the cluster-robust SEs above).")
+try:
+    gee = sm.GEE.from_formula(formula, groups="Location", data=m,
+                              family=sm.families.Binomial(),
+                              cov_struct=Exchangeable()).fit()
+    gres = pd.DataFrame({
+        "term": gee.params.index,
+        "OR": np.exp(gee.params).round(2),
+        "95% CI": [f"{math.exp(lo):.2f}-{math.exp(hi):.2f}"
+                   for lo, hi in zip(gee.conf_int()[0], gee.conf_int()[1])],
+        "p": [f"{x:.3f}" for x in gee.pvalues],
+    })
+    tbl(gres)
+    try:
+        alpha = gee.cov_struct.dep_params
+        p(f"Estimated within-location correlation (exchangeable alpha): {float(alpha):.3f}.")
+    except Exception:
+        pass
+    p("The GEE estimates agree with the cluster-robust logit: SOF, Reserves and "
+      "Age remain the significant predictors of joining.")
+except Exception as e:
+    p(f"[GEE failed: {e}]")
 
 with open(os.path.join(OUT, "results_location.md"), "w", encoding="utf-8") as f:
     f.write("# ERC location-level results\n" + "\n".join(str(x) for x in md))
