@@ -62,9 +62,10 @@ initiative — were used to place individuals at specific events and locations; 
 narrative and uneven in coverage, and were treated as supplementary. Where the
 official sources did not fix the exact place or time of death, we triangulated using
 press reporting, the published security-agency operational probes, and family
-testimony regarding when contact was lost. An earlier compilation of the fallen —
-182 soldiers extracted from the government's *Swords of Iron* casualties page on
-October 26, 2024 — preceded the present database and is preserved, with its
+testimony regarding when contact was lost. The database grew out of an initial
+compilation of the fallen — 182 soldiers extracted from the government's *Swords of
+Iron* casualties page on October 26, 2024 — which was subsequently expanded and
+cross-verified against the sources above. That working file is preserved, with its
 documentation, in the repository's `Evolving-Paradigms/` folder.
 
 For the present study the verified records were **enriched** with several derived and
