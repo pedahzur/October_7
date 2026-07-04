@@ -102,6 +102,8 @@ Israel Defense Forces. 2023. *The War's Fallen* [memorial mini-site]. https://ww
 
 Israel Police. 2023. *In Their Memory* [memorial site]. https://lezichram.police.gov.il/.
 
+State of Israel. 2024. *Swords of Iron: IDF Casualties*. https://www.gov.il/en/pages/swords-of-iron-idf-casualties. *(An early snapshot of the October 7 fallen — 182 soldiers, extracted October 26, 2024 — is preserved with its documentation in this repository's `Evolving-Paradigms/` folder.)*
+
 Kan — Israeli Public Broadcasting Corporation. 2024. *Kan 7.10.360*. https://www.710360.kan.org.il/.
 
 Mapping the Massacre. 2023. *Mapping the Massacre*. https://oct7map.com/.
