@@ -9,6 +9,11 @@ during the October 7, 2023 attack.
 - **docs/** — Analysis materials, including location-level analysis and cluster-robust inference; published via GitHub Pages.
 - **ERC paper/** — Manuscript materials, bibliography, and a Hebrew translation of manuscript sections.
 - **Ranking Israeli units by distinct deployment locations during the October 7 attack.pdf** — A summary output.
+- **Evolving-Paradigms/** — Materials consolidated from the former
+  [Evolving-Paradigms](https://github.com/pedahzur/Evolving-Paradigms) repository (October 2024):
+  the fallen-soldiers dataset drawn from the IDF casualties page, October 7–8 military
+  fatalities and map data, and research-design notes on a relational database for
+  political violence research. Full commit history was preserved in the merge.
 
 ## Method
 
