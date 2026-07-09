@@ -33,3 +33,8 @@ locations and units data. Results are presented on the
 
 Active research project. Data and code are shared for transparency and reproducibility;
 please cite this repository if you use it and check the license before reuse.
+
+
+## AI-assisted workflow
+
+Model: Claude, used to assist with the analysis pipeline (descriptive infographics and inferential statistics) and with drafting/organizing project materials. Prompt strategy: iterative pipeline development against the Locations.csv/Units.csv datasets. Human validation: underlying location and unit data, and all published statistics and figures, were reviewed by the author before publication on the project website. Not yet validated: no formal independent replication of the inferential results has been conducted to date.
