@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it as below."
+title: "October 7: Special Operations Forces During the October 7 Attack"
+type: dataset
+authors:
+  - family-names: Pedahzur
+    given-names: Ami
+    orcid: "https://orcid.org/0000-0002-0925-4993"
+    affiliation: "University of Haifa"
+repository-code: "https://github.com/pedahzur/October_7"
+url: "https://pedahzur.github.io/October_7/"
+abstract: >-
+  Workflow, data, and analysis on the role of special operations forces
+  during the October 7, 2023 attack. Includes location and unit-level
+  datasets, descriptive infographics, cluster-robust inferential
+  statistics, an interactive map (English and Hebrew), and the
+  consolidated Evolving-Paradigms materials on security studies and
+  modern warfare, including a dataset of soldiers who fell on
+  October 7, 2023, compiled from the official IDF casualties page.
+keywords:
+  - October 7
+  - special operations forces
+  - Israel
+  - event data
+  - political violence
+  - security studies
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-07-09
